@@ -1,0 +1,72 @@
+.tablist {
+	list-style:none;
+	height:2em;
+	width: 50%;
+	padding:0; 
+    margin:0 auto; 
+    border: none;
+}
+
+.tablist li {
+    float:left; 
+    margin-right:0.2em; 
+}
+
+.tablist li span {
+    display:block;
+    padding:0 1em;
+    text-decoration:none;
+    border:0.06em solid #000;
+    border-bottom:0;
+    font:bold 0.88em/2em arial,geneva,helvetica,sans-serif;
+    color:#000;
+    
+    /* CSS 3 elements */
+    webkit-border-top-right-radius:0.50em;
+    -webkit-border-top-left-radius:0.50em;
+    -moz-border-radius-topright:0.50em;
+    -moz-border-radius-topleft:0.50em;
+    border-top-right-radius:0.50em;
+    border-top-left-radius:0.50em;
+}
+
+.tablist li span:hover {
+    background:#3cf; 
+    color:#fff;
+    text-decoration:none;
+}
+
+span.active {
+	background-color: yellow;
+	position:relative;
+	top:5px;
+}
+
+span.inactive {
+	background-color: white;
+	position:relative;
+	top:3px;
+}
+
+section.visible {
+	width: 50%;
+	height: 50px;
+	overflow: auto;
+	display: block;
+	border: 1px solid;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+section.invisible {
+	display: none;
+}
+
+footer{
+	width: 50%;
+	float: right;
+	cursor:progress;
+	margin:0 auto; 
+}
