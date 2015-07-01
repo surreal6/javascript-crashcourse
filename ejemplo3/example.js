@@ -1,32 +1,33 @@
 (function() {
 
+	var data = {}
+
 	document.body.onload = function() {
 		// leer el puto json y lanzar la funcion principal con la info
-		$.getJSON('data1.json', function(json){
+		$.getJSON('data.json', function(json){
+			console.log(json.employees.length);
 			main(json.employees);
 		});
 	}
 
-	var sections;
-	sections = ["aaa", "bbb", "ccc"]
 
 	function main(data) {
-		console.log(data);
+		console.log(data.length);
 		// codigo dinamico
-		for(var i = 0; i < sections.length; i++) {
-			addSections(i);
-			addTabs(i);
+		for(var i = 0; i < data.length; i++) {
+			addSections(i, data);
+			addTabs(i, data);
 		}
 		// interaccion
 		addInteraction();
 	}
 
-	function addTabs(i) { 
+	function addTabs(i, data) { 
 		var newTab;
 		var newContent;
 		var currentDiv; 
 		newTab = document.createElement("span"); 
-		newContent = document.createTextNode(sections[i]); 
+		newContent = document.createTextNode(data[i].firstName); 
 		newTab.appendChild(newContent); 
 		newTab.setAttribute("data-tab", i+1);
 		if (i === 0) {
@@ -40,12 +41,12 @@
 		document.getElementsByTagName("ul")[0].appendChild(newLi);
 	}
 
-	function addSections(i) {
+	function addSections(i, data) {
 		var newSection;
 		var newContent;
 		var currentDiv; 
 	  	newSection = document.createElement("section"); 
-  		newContent = document.createTextNode(sections[i]); 
+  		newContent = document.createTextNode(data[i].lastName); 
   		newSection.appendChild(newContent); //add the text node to the newly created div. 
   		newSection.setAttribute("data-tab", i+1);
   		if (i === 0) {
